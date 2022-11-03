@@ -16,11 +16,11 @@
                        </div>
                        <div class="menu">
                             <ul>
-                                <li><a href="#">dashboard</a></li>
-                                <li><a href="#">user</a></li>
-                                <li><a href="#">category</a></li>
+                                <li><a href="#">Dashboard</a></li>
+                                <li><a href="#">User</a></li>
+                                <li><a href="#">Category</a></li>
                                 <li><a href="#">Product</a></li>
-                                <li><a href="#">order</a></li>
+                                <li><a href="#">Order</a></li>
                             </ul>
                        </div>
                        <div class="clearfix"></div>
@@ -31,15 +31,10 @@
                   <!-- Body section starts -->
                   <section class="content">
                     <div class="wrapper">
-                       <div class="breadcumb ">
-                            <ul>
-                                <li><a href="#">dashboard</a></li>
-                                <li><a href="#">dashboard</a></li>
-                            </ul>
-                       </div>
+                        <strong>DASHBOARD</strong>
                        <div class="from-wrapper">
                         <form action="">
-
+        
                         </form>
                        </div>
                     </div>

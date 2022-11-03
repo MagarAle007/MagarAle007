@@ -9,7 +9,6 @@
     }
 
     .wrapper{
-        border: 1px solid red;
         width: 80%;
         margin: 0 auto;
         padding:  1%;
@@ -19,7 +18,6 @@
     }
     .logo{
         width: 15%;
-        border: 1px solid red;
         float: left;
     }
     .img-responsive{
@@ -27,6 +25,10 @@
     }
     .menu{
         line-height: 100px;
+    }
+    .menu-bar{
+        border-bottom: 1px solid grey;
+        padding:2%;
     }
     .menu ul{
         list-style-type: none;
@@ -37,6 +39,9 @@
             display: inline;
             padding: 1%;
     }
+    .menu ul li a{
+        font-size: 1.1rem;
+    }
     .clearfix{
         clear: both;
         float: none;
@@ -45,27 +50,34 @@
         text-decoration: none;
         color: rgb(12, 223, 160);
         font-weight: bold;
+    
     }
      a:hover{
         color: #2ed573;
-    }
-    .breadcumb ul li{
-            list-style-type: none;
-           
-            
     }
      a{
         text-decoration: none;
       
 
     }
+    /* Footer css */
     .footer-link{
-        list-style-type: none;
-        text-decoration: none;
-        color: rgb(12, 223, 160);
+        color:#f368e0;
+    }
+    .footer-link:hover{
+        color: #f1f2f6;
+    }
+    .footer{
+        background-color: rgb(12, 223, 160);
+        color:white;
     }
 
 
+    /*content css  */
+    .content{
+        background-color: greenyellow;
+        margin-top: 1%;
+    }
     .table tr th{
         text-align: left;
         padding: 1%;
@@ -87,10 +99,19 @@
     .btn-primary{
         background-color: #2ed573;
     }
+    .btn-primary:hover{
+        background-color: #2ed573;
+    }
     .btn-secondary{
         background-color: #3742fa;
     }
+    .btn-secondary:hover{
+        background-color: #3742fa;
+    }
     .btn-danger{
+        background-color: #ff4757;
+    }
+    .btn-danger:hover{
         background-color: #ff4757;
     }
 
