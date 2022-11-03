@@ -1,284 +1,287 @@
-                        /*
-                            Author- S.A.M
-                            Contact- 
+                            /* 
+                        Author : Sanjeev Ale Magar
+                        contact : samphpedu17@gmail.com
                         */
-                        /* css for all */
-                        .container{
-                        
-                            width: 80%;
-                            padding: 3% 0;
-                            margin: 4% auto;
+                            /* css for all */
+                            .container{
                             
-                        }
-
-                        *{
-                            margin: 0 0;
-                            padding: 0  0;
-                        }
-
-                        .img-responsive{
-                            width: 100%;
-                        }
-                        .img-rounded{
-                            border-radius: 10px;
-                        }
-                        .text-right{
-                            text-align: right ;
-                        }
-
-                        .text-center{
-                            text-align: center ;
-                        }
-                        .text-white{
-                                color: white;
-                        }
-
-                        a{
-                            text-decoration: none;
-                            color:rgb(12, 223, 160);
-                        }
-
-                        a:hover{
-                            color: #ff4757;
-                        }
-                        .clearfix{
-                                clear: both;
-                                float: none;
-                        }
-                        
-                        .btn{
-                            padding: 1%;
-                            font-size: 1.2rem;
-                            border: none;
-                            border-radius: 5px;
-                        }
-
-                        .btn-primary{
-                            background-color:rgb(12, 223, 160) ;
-                            color: white;
-                        }
-                        .btn-primary:hover{
-                            color: white;
-                        }
-
-                        h2{
-                            color:#ff4757;
-                            margin-bottom: 1%;
-                        }
-
-                        h3{
-                            
-                            font-size: 1rem;
-                        }
-
-                        /* css for navbar start here */
-                        .logo{
-                            width: 10%;
-                            
-                            float: left;
-                        }
-                        .menu{
-                            line-height: 60px;
-                        }
-                        .menu ul{
-                            list-style-type: none;
-                        }
-                        .menu ul li{
-                            display: inline;
-                            padding: 0 1%;
-                            font-weight: bold;
-                        }
-                        /* css for navbar end here*/
-
-                        /* css for search bar */
-                        .search{
-                                background-image: url(../images/background.png);
-                                background-size: cover;
-                                background-repeat: no-repeat;
-                                padding: 0.5% 0;
-                                background-position:center ;
-                        }
-                        .search input[type=search]{
-                                width: 50%;
-                                border: none;
-                                font-size: 1.2rem;
-                                border-radius: 5px;
-                                padding: 1%;
-                        }
-                        /* css for search bar */
-
-                        /* css for catagories start */
-                        .catagories{
-                            padding: 4% 0;
-                        }
-                        .card{
-                            width: 25%;
-                            
-                            float: left;
-                            margin: 4%;
-                            text-align: center;
-                        }
-                        .float-container{
-                            position: relative;
-                        }
-                        .float-text{
-                            position:absolute;
-                            left: 30%;
-                            bottom: 30px;
-                        }
-                        /* css for catagories end*/
-
-                        /* css for land menu */
-                        .land-menu{
-                            padding: 4% 0;
-                            background-color: whitesmoke;
-                        }
-                        .box{
-                            
-                            width: 43%;
-                            float: left;
-                            margin: 1%;
-                            padding: 2%;
-                            background: white;
-                            border-radius: 10px;
-                            
-                        }
-                        .box-image{
-                            float: left;
-                            width: 20%;
-                        }
-                        .box-desc{
-                            width: 70%;
-                            float: left;
-                            margin:2%;
-                        }
-                        .item-price{
-                            font-size: 1.2rem;
-                            padding:  1% 0;
-                        }
-                        .item-desc{
-                            font-size: 1rem;
-                            color: rgb(5, 59, 61);
-                            padding-bottom: 1%;
-                        }
-                        /* css for land menu ends here */
-
-                        /* social start */
-                        .social{
-                            padding: 4% 0;
-                        }
-                        .social ul{
-                            list-style: none;
-                        }
-                        .social ul li{
-                            display: inline;
-                            padding: 0 1%;
-                        }
-                        /* social end   */
-
-                        /* css for contact */
-                            .form-horizontal{
-                                background-color: whitesmoke;
-                                width:60% ;
+                                width: 80%;
+                                padding: 3% 0;
                                 margin: 4% auto;
-                                padding: 1% 0;
+                                
                             }
-                            .form-horizontal label{
+
+                            *{
+                                margin: 0 0;
+                                padding: 0  0;
+                            }
+
+                            .img-responsive{
                                 width: 100%;
-                                padding: 10% 0;
-                                margin: 14% 0;
+                            }
+                            .img-rounded{
+                                border-radius: 10px;
+                            }
+                            .text-right{
+                                text-align: right ;
+                            }
+
+                            .text-center{
+                                text-align: center ;
+                            }
+                            .text-white{
+                                    color: white;
+                            }
+
+                            a{
+                                text-decoration: none;
+                                color:rgb(12, 223, 160);
+                            }
+
+                            a:hover{
+                                color: #ff4757;
+                            }
+                            .clearfix{
+                                    clear: both;
+                                    float: none;
+                            }
+                            
+                            .btn{
+                                padding: 1%;
                                 font-size: 1.2rem;
+                                border: none;
+                                border-radius: 5px;
+                            }
+
+                            .btn-primary{
+                                background-color:rgb(12, 223, 160) ;
+                                color: white;
+                            }
+                            .btn-primary:hover{
+                                color: white;
+                            }
+
+                            h2{
+                                color:#ff4757;
+                                margin-bottom: 1%;
+                            }
+
+                            h3{
+                                
+                                font-size: 1rem;
+                            }
+                            h1{
+                                padding: 2px;
+                            }
+
+                            /* css for navbar start here */
+                            .logo{
+                                width: 10%;
+                                
+                                float: left;
+                            }
+                            .menu{
+                                line-height: 60px;
+                            }
+                            .menu ul{
+                                list-style-type: none;
+                            }
+                            .menu ul li{
+                                display: inline;
+                                padding: 0 1%;
                                 font-weight: bold;
                             }
-                            .contact-heading{
-                                padding: 3% 0;
-                            }
-                            .form-control{
-                                border: none;
-                                margin: 0.5%;
-                                padding:1%;
-                                width: 97%;
-                                font-size: 1.2rem;
-                                border-radius: 5px;
-                                padding-bottom: 9px;
-                                margin-bottom: 7px;
+                            /* css for navbar end here*/
 
+                            /* css for search bar */
+                            .search{
+                                    background-image: url(../images/background.png);
+                                    background-size: cover;
+                                    background-repeat: no-repeat;
+                                    padding: 0.5% 0;
+                                    background-position:center ;
                             }
-                            .form-horizontal button{
-                                width: 50%;
-                                margin-left: 26%;
-                                margin-top: 2;
+                            .search input[type=search]{   
+                                    width: 50%;
+                                    border: none;
+                                    font-size: 1.2rem;
+                                    border-radius: 5px;
+                                    padding: 1%;
                             }
-                            .home-contact{
-                                font-size:2rem;
+                            /* css for search bar */
+
+                            /* css for catagories start */
+                            .catagories{
+                                padding: 4% 0;
                             }
-                            .fieldset{
-                                border: 1px solid blue;
-                                border-radius: 10px;
+                            .card{
+                                width: 25%;
+                                
+                                float: left;
+                                margin: 4%;
+                                text-align: center;
+                            }
+                            .float-container{
+                                position: relative;
+                            }
+                            .float-text{
+                                position:absolute;
+                                left: 30%;
+                                bottom: 30px;
+                            }
+                            /* css for catagories end*/
+
+                            /* css for land menu */
+                            .land-menu{
+                                padding: 4% 0;
+                                background-color: whitesmoke;
+                            }
+                            .box{
+                                
+                                width: 43%;
+                                float: left;
+                                margin: 1%;
                                 padding: 2%;
-                                margin: 2% 0;
+                                background: white;
+                                border-radius: 10px;
+                                
                             }
-                            fieldset .btn{
-                                margin-left: 24%;
+                            .box-image{
+                                float: left;
+                                width: 20%;
                             }
-                    /* css for contact end */
+                            .box-desc{
+                                width: 70%;
+                                float: left;
+                                margin:2%;
+                            }
+                            .item-price{
+                                font-size: 1.2rem;
+                                padding:  1% 0;
+                            }
+                            .item-desc{
+                                font-size: 1rem;
+                                color: rgb(5, 59, 61);
+                                padding-bottom: 1%;
+                            }
+                            /* css for land menu ends here */
 
-                    /* Respsive mobile devices */
-                @media screen and (max-width:728px){
-                    .logo{
-                        width: 80%;
+                            /* social start */
+                            .social{
+                                padding: 4% 0;
+                            }
+                            .social ul{
+                                list-style: none;
+                            }
+                            .social ul li{
+                                display: inline;
+                                padding: 0 1%;
+                            }
+                            /* social end   */
+
+                            /* css for contact */
+                                .form-horizontal{
+                                    background-color: whitesmoke;
+                                    width: 70% ;
+                                    margin: 4% auto;
+                                    padding: 1% ;
+                                }
+                                .form-horizontal label{
+                                    width: 100%;
+                                    padding: 10% 0;
+                                    margin: 14% 0;
+                                    font-size: 1.2rem; 
+                                    font-weight: bold;
+                                }
+                                .contact-heading{
+                                    padding: 3% 0;
+                                }
+                                .form-control{
+                                    border: none;
+                                    margin: 0.5%;
+                                    padding:1%;
+                                    width: 97%;
+                                    font-size: 1.2rem;
+                                    border-radius: 5px;
+                                    padding-bottom: 9px;
+                                    margin-bottom: 7px;
+
+                                }
+                                .form-horizontal button{
+                                    width: 50%;
+                                    margin-left: 26%;
+                                    margin-top: 2;
+                                }
+                                .home-contact{
+                                    font-size:2rem;
+                                }
+                                .fieldset{
+                                    border: 1px solid blue;
+                                    border-radius: 10px;
+                                    padding: 2%;
+                                    margin: 2% 0;
+                                }
+                                fieldset .btn{
+                                    margin-left: 24%;
+                                }
+                        /* css for contact end */
+
+                        /* Respsive mobile devices */
+                    @media screen and (max-width:728px){
+                        .logo{
+                            width: 80%;
+                            float: none;
+                            padding: 1% 0;
+                    }
+                    .menu{
+                    
+                        font-size: 2rem;
                         float: none;
-                        padding: 1% 0;
+                        text-align: center !important;
+                        font-weight: unset ;
+                    }
+                    .search{
+                        padding: 10% 0;
+                    }
+                    .search input[type=search]{
+                        font-size: 1rem;
+                        width: 90%;
+                        padding: 4% 0;
+                        margin: 4% 0;
+                        line-height: 10px;
+                    }
+                    .btn{
+                        width: 90%;
+                    }
+                    .categories{
+                        padding: 10% 0;
+                    }
+                    .card{
+                        width: 90%;
+                        padding: 0 5%;
+                    }
+                    .float-text{
+                        left: 40%;
+                    }
+                    .land-menu{
+                        padding: 10% 0;
+                    }
+                    h2{
+                        padding: 10%  0;
+                    }
+                    .box{
+                        width: 90%;
+                        padding: padding 4% 0;
+                        margin-bottom: 15px;
+                    }
+                    h3{
+                            font-size: 0.9rem;
+                    }
+                    .social{
+                        padding: 10% 0;
+                    }
+                    
                 }
-                .menu{
-                
-                    font-size: 2rem;
-                    float: none;
-                    text-align: center !important;
-                    font-weight: unset ;
-                }
-                .search{
-                    padding: 10% 0;
-                }
-                .search input[type=search]{
-                    font-size: 1rem;
-                    width: 90%;
-                    padding: 4% 0;
-                    margin: 4% 0;
-                    line-height: 10px;
-                }
-                .btn{
-                    width: 90%;
-                }
-                .categories{
-                    padding: 10% 0;
-                }
-                .card{
-                    width: 90%;
-                    padding: 0 5%;
-                }
-                .float-text{
-                    left: 40%;
-                }
-                .land-menu{
-                    padding: 10% 0;
-                }
-                h2{
-                    padding: 10%  0;
-                }
-                .box{
-                    width: 90%;
-                    padding: padding 4% 0;
-                    margin-bottom: 15px;
-                }
-                h3{
-                        font-size: 0.9rem;
-                }
-                .social{
-                    padding: 10% 0;
-                }
-                
-            }
-            /* Respsive mobile devices end */
+                /* Respsive mobile devices end */
 
-        
+            
