@@ -3,7 +3,10 @@
          <section class="content">
                         <div class="wrapper">
                             <h1 class="heading">MANAGE USER</h1>
-                            <br>
+                            <br><br>
+
+                            <?php include('config/session.php')?>
+
                             <a class="btn btn-secondary user-addd"  href="add-user.php">Add user</a>
                             <br>
                             <!-- Users table -->
@@ -21,7 +24,7 @@
                                             <td>1</td>
                                             <td>Arjun</td>
                                             <td>baba</td>
-                                            <td> sads%(9</td>
+                                            <td>sads%(9</td>
                                             <td>
                                                 <a class="btn btn-primary" href="#">
                                                     Edit User
