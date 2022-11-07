@@ -143,6 +143,14 @@
         .text-right{
             text-align: right!important;
         }
+        .success{
+            color:#2ed573;
+            background-color: white;
+        }
+        .error{
+            color: #3742fa;
+            background-color: white;
+        }
        
 
     

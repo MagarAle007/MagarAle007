@@ -20,49 +20,46 @@
                                        </tr>
                                     </thead>
                                     <tbody>
-                                        <?php
-                                        // making the sql to paste the data from users table
-                                            $sql = "SELECT  FROM 'users'";
+                                       <?php
+                                            // making the sql  to fetch the data from users table
+                                            $sql = "SELECT * FROM 'users'";
 
-                                        // execute the query
-                                        $exec = mysqli_query($conn,$sql);
+                                            // execute the query
+                                            $exec = mysqli_query($conn,$sql);
 
-                                        // if there is something
-                                        if($exec == TRUE){
+                                            // if there is something
+                                            if($exec = TRUE){
 
-                                            // cont the number of rows
-                                            $count =  mysqli_num_rows($exec);
-
-                                            if($count>0){
-                                               while( $rows = mysqli_fetch_assoc($exec)){
-                                                $id = $rows['id'];
-                                                $full_name = $rows['$full_name'];
-                                                $user_name = $rows['$user_name'];
-                                                ?>
-                                                <tr>
-                                                        <td></td>
-                                                </tr>
-                                                <?php
-                                                var_dump($user_name);
-                                               }
-                                            //    
+                                                // count the numbers of rows
+                                                $count = mysqli_num_rows($exec);
+                                                if($count > 0){
+                                                     $sn = 1;
+                                                     while($rows = mysqli_fetch_assoc($exec)){
+                                                        $id = $rows['id'];
+                                                        $full_name = $rows['full_name'];
+                                                        $user_name = $rows['user_name'];
+                                                        ?>
+                                                        <tr>
+                                                            <td><?php echo $sn++;?></td>
+                                                            <td><?php echo $full_name;?></td>
+                                                            <td><?php echo $user_name;?></td>
+                                                            <td>
+                                                                <a class="btn btn-primary" href="<?php   echo APP_URL;?>Admin/edit-user.php?id=<?php echo $id; ?>">
+                                                                  Edit User
+                                                                 </a>
+                                                                 <a class="btn btn-danger"  href="<?php   echo APP_URL;?>Admin/delete-user.php?id=<?php echo $id; ?>">
+                                                                  delete user
+                                                                  </a>
+                                                            </td>
+                                                        </tr>
+                                                        <?php
+                                                      }
+                                                }
+                                            }else{
+                                                echo '<tr><td clospan="4">No rows to display</td></tr>'
                                             }
-                                        }
-                                        ?>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Arjun</td>
-                                            <td>baba</td>
-                                            <td>sads%(9</td>
-                                            <td>
-                                                <a class="btn btn-primary" href="#">
-                                                    Edit User
-                                                </a>
-                                                <a class="btn btn-danger"  href="<?php   echo APP_URL;?>admin/delete-user.php">
-                                                    delete user
-                                                </a>
-                                            </td>
-                                        </tr>
+                                       ?>
+                                      
                                     </tbody>
                                 </table>
                              <!-- Users table ends -->
