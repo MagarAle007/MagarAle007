@@ -1,4 +1,4 @@
-<?php include('common/header.php')?>
+<?php include('common/header.php');?>
          <!-- Body section starts -->
          <section class="content">
                         <div class="wrapper">
@@ -45,9 +45,12 @@
                                                             <td><?php echo $full_name;?></td>
                                                             <td><?php echo $user_name;?></td>
                                                             <td>
-                                                                <a class="btn btn-primary" href="<?php   echo APP_URL;?>Admin/edit-user.php?id=<?php echo $id; ?>">
-                                                                  Edit User
+                                                                <a class="btn btn-secondary" href="<?php   echo APP_URL;?>Admin/update-password.php?id=<?php echo $id; ?>">
+                                                                  Change Password
                                                                  </a>
+                                                                    <a class="btn btn-primary" href="<?php   echo APP_URL;?>Admin/edit-user.php?id=<?php echo $id; ?>">
+                                                                    Edit User
+                                                                    </a>
                                                                  <a class="btn btn-danger"  href="<?php   echo APP_URL;?>Admin/delete-user.php?id=<?php echo $id; ?>">
                                                                   delete user
                                                                   </a>

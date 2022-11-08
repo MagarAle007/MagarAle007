@@ -1,10 +1,12 @@
     <?php
+        //making the connection
+        include('config/constant.php');
         // taking the id 
         $id = $_GET['id'];
 
         // making th sql
 
-        $sql = "DELETE FROM USERS HERE ID ='$id'";
+        $sql = "DELETE FROM USERS WHERE ID ='$id'";
         
         // execute query 
         $exec = mysqli_query($conn,$sql);
@@ -14,7 +16,7 @@
             $_SESSION['messsage'] = '<div classs ="success">Users deleted successfully.</div>';
         
         }else{
-            $_SESSION['messsage'] = '<div classs ="success">Something went wrong. Try Again</div>';
+            $_SESSION['messsage'] = '<div classs ="error">Something went wrong. Try Again</div>';
         }
         header('location:'.APP_URL.'Admin/manage-user.php');
     ?>
