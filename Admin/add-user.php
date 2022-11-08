@@ -39,7 +39,7 @@
                 //form submit code
                 if($_SERVER["REQUEST_METHOD"] == "POST"){
                 if(isset($_POST['submit'])){
-                    var_dump($_POST);
+                    
                     // Getting the data from the web form in respective variable
                     $full_name = $_POST['full_name'];
                     $user_name = $_POST['user_name'];

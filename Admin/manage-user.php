@@ -22,13 +22,13 @@
                                     <tbody>
                                        <?php
                                             // making the sql  to fetch the data from users table
-                                            $sql = "SELECT * FROM 'users'";
+                                            $sql = "SELECT * FROM users";
 
                                             // execute the query
                                             $exec = mysqli_query($conn,$sql);
 
                                             // if there is something
-                                            if($exec = TRUE){
+                                            if($exec == TRUE){
 
                                                 // count the numbers of rows
                                                 $count = mysqli_num_rows($exec);
@@ -39,6 +39,7 @@
                                                         $full_name = $rows['full_name'];
                                                         $user_name = $rows['user_name'];
                                                         ?>
+
                                                         <tr>
                                                             <td><?php echo $sn++;?></td>
                                                             <td><?php echo $full_name;?></td>
@@ -56,7 +57,7 @@
                                                       }
                                                 }
                                             }else{
-                                                echo '<tr><td clospan="4">No rows to display</td></tr>'
+                                                echo '<tr><td clospan="4">No rows to display</td></tr>';
                                             }
                                        ?>
                                       
@@ -66,4 +67,4 @@
                         </div>
                     </section>
                 <!-- Body section ends -->  
-<?php include('common/footer.php')?>
+                <?php include('common/footer.php')?>
