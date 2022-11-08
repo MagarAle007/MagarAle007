@@ -1,11 +1,11 @@
-        <?php include('common/header.php')?>
+        <?php include('common/header.php');?>
                             <!-- Body section starts -->
                             <section class="content">
                                             <div class="wrapper">
                                                 <h1 class="heading">EDIT USER</h1>
                                                 <br><br>
 
-                                        <?php include('config/session.php')?>
+                                        <?php include('config/session.php');?>
                                         <?php
                                         //getting id
                                             $id = $_GET['id'];
@@ -14,7 +14,7 @@
                                             $sql = "SELECT * FROM users where id='$id'";
 
                                             //execute the query
-                                            $exec = mysqli_query($comm,$sql);
+                                            $exec = mysqli_query($conn,$sql);
 
                                             //count the number of rows
                                             $count = mysqli_num_rows($exec);
@@ -53,7 +53,6 @@
                                         </section>
                                     <!-- Body section ends -->  
                     <?php include('common/footer.php')?>
-
                     <?php 
                         //form submit code
                         if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -65,7 +64,7 @@
                             $id = $_POST['id'];
 
                             //making sql
-                            $sql = "INSERT INTO users SET
+                            $sql = "UPDATE users SET
                                 full_name = '$full_name',
                                 user_name  = '$user_name',
                                 WHERE id ='$id'";
