@@ -1,11 +1,10 @@
-        <?php include('common/header.php');?>
+<?php include('common/header.php'); ?>
+       <?php include('config/session.php'); ?>
                             <!-- Body section starts -->
                             <section class="content">
                                             <div class="wrapper">
                                                 <h1 class="heading">EDIT USER</h1>
                                                 <br><br>
-
-                                        <?php include('config/session.php');?>
                                         <?php
                                         //getting id
                                             $id = $_GET['id'];
@@ -62,30 +61,30 @@
                             $full_name = $_POST['full_name'];
                             $user_name = $_POST['user_name'];
                             $id = $_POST['id'];
+                                //making sql 
+                            $sql = "UPDATE users SET 
+                            full_name='$full_name',
+                            user_name='$user_name'
+                            WHERE id='$id'";
+                            
 
-                            //making sql
-                            $sql = "UPDATE users SET
-                                full_name = '$full_name',
-                                user_name  = '$user_name',
-                                WHERE id ='$id'";
-
-                        
+                            //Check the connection 
                             if($conn){
-                                
-                                $execute  = mysqli_query($conn,$sql) or die(mysqli_error($conn));    
-                                //Create DAtabase
-                                if($execute = TRUE){
-                                    $_SESSION['message'] = '<div class="success">User updated succcessfully</div>';
-                                    header('location:'.APP_URL.'Admin/manage-user.php');
-                                }else{
-                                    $_SESSION['message'] = '<div class="error">Could not edit User Instantly .Try again</div>';
-                                    header('location:'.APP_URL.'Admin/edit-user.php');
-                                }
+                                $execute = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+                                //create database
+                                    if($execute = TRUE){
+                                        $_SESSION['message'] = "<div class='success'>User updated Successfully</div>";
+                                        header('location:'.APP_URL.'Admin/manage-user.php');
+                                    }else{
+                                        var_dump('sfa');
+                                        die();
+                                        $_SESSION['message'] = '<div class="error">Could not Edit User Instantly. Try Again</div>';
+                                        header("location:".APP_URL."Admin/edit-user.php");
+                                    }
 
                             }else{
-                                die("Connection failed".mysqli_connect_error());
-                        }
-
-                        }
-                    }
+                                 die("Connection Failed!".mysqli_connect_error());
+                            }
+                            }
+                            }
                     ?>
