@@ -151,6 +151,15 @@
             color: #3742fa;
             background-color: white;
         }
-       
+        /* login csss start */
+        .login{
+            border: 1px solid red;
+            width:20%;
+            margin: 10% auto;
+            padding: 2%;
+        }
+        .form-control-login{
+            width: 50%;
+        }
 
     

@@ -1,4 +1,7 @@
-<?php include('config/constant.php')?>
+<?php 
+    include('config/constant.php');
+    include('config/login-check.php');
+?>
 
 <!DOCTYPE html>
         <html lang="en">
@@ -23,6 +26,7 @@
                                 <li><a href="manage-category.php">Category</a></li>
                                 <li><a href="manage-product.php">Product</a></li>
                                 <li><a href="manage-order.php">Order</a></li>
+                                <li><a href="logout.php">logout</a></li>
                             </ul>
                        </div>
                        <div class="clearfix"></div>
