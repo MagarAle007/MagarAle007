@@ -2,7 +2,7 @@
                     <!-- Body section starts -->
                     <section class="content">
                                     <div class="wrapper">
-                                        <h1 class="heading">MANAGE USER</h1>
+                                        <h1 class="heading">ADD USER</h1>
                                         <br><br>
 
                                   <?php include('config/session.php')?>
@@ -11,17 +11,17 @@
                                         <table class="table">
                                             <tr>
                                                 <td class="text-right">UserName</td>
-                                                <td><input type="text" placeholder="Enter user name" name="user_name" id="user_name" class="form-control"></td>
+                                                <td><input type="text" placeholder="Enter  your username..." name="user_name" id="user_name" class="form-control"></td>
                                             </tr>
 
                                             <tr>
                                                 <td class="text-right">FullName</td>
-                                                <td><input type="text" name="full_name"  placeholder="Enter Full Name" id="full_name" class="form-control"></td>
+                                                <td><input type="text" name="full_name"  placeholder="Enter your Full Name...." id="full_name" class="form-control"></td>
                                             </tr>
 
                                             <tr>
                                                 <td class="text-right">Password</td>
-                                                <td><input type="password" name="password"   placeholder="Enter your password"id="password" class="form-control"></td>
+                                                <td><input type="password" name="password"   placeholder="Enter your password...."id="password" class="form-control"></td>
                                             </tr>
 
                                             <tr>
