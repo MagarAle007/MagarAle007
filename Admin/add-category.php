@@ -80,7 +80,13 @@
                         //check if request have file
                         if($_FILES['image']['name']){
                             
-                            $image = $_FILES['image']['name'];
+                            //taking the extension
+                            $ext = end(explode('.',$_FILES['image']['name']));
+
+                             //giving the random name 
+                            $image = 'Category_'.rand(1111,9999).'.'.$text;
+                           
+
                             // image upload
                             $uploaded_path = $_FILES['image']['tmp_name'];
                             $destination_path = "../images/category/".$image;
@@ -91,11 +97,11 @@
                                 $_SESSION['message'] = '<div class="error">Could not upload the image.Try again</div>';
                                 die();
                             }else{
-                                $image_name = $_FILES['image']['name'];
+                                $image_name = $image;
                             }
 
                         }else{
-                            $image_name = $image;
+                            $image_name ="";
                         }
 
                         //making sql
