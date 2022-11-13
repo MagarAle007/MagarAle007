@@ -76,8 +76,7 @@
                                         $_SESSION['message'] = "<div class='success'>User updated Successfully</div>";
                                         header('location:'.APP_URL.'Admin/manage-user.php');
                                     }else{
-                                        var_dump('sfa');
-                                        die();
+                                        
                                         $_SESSION['message'] = '<div class="error">Could not Edit User Instantly. Try Again</div>';
                                         header("location:".APP_URL."Admin/edit-user.php");
                                     }

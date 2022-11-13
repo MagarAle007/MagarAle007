@@ -1,5 +1,6 @@
 <?php 
-    include('config/constant.php');
+ ob_start();
+   include('config/constant.php');
     include('config/login-check.php');
 ?>
 
