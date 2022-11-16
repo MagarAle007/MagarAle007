@@ -116,9 +116,13 @@
                                
                                     //upload file or image 
                                      //check if request have file
+                                     
                                     if($_FILES['image']['name']){
-                                        
-                                        $image = $_FILES['image']['name'];
+                                        $textnm=explode('.',$_FILES['image']['name']);
+                                        $text = end($textnm);
+
+                                                //giving the random name 
+                                          $image = 'Category_'.rand(1111,9999).'.'.$text;
                                         // image upload
                                         $uploaded_path = $_FILES['image']['tmp_name'];
                                         $destination_path = "../images/category/".$image;
@@ -144,13 +148,12 @@
                                 title='$title',
                                 featured='$featured',
                                 status = '$status',
-                                image_name = '$image_name',
+                                image_name = '$image_name'
                                 WHERE id='$id'";
-                                
 
                                 //Check the connection 
-                                if($conn){
-                                    $execute = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+                                    if($conn){
+                                $execute = mysqli_query($conn, $sql) or die(mysqli_error($conn));
                                     //create database
                                         if($execute == TRUE){
                                             $_SESSION['message'] = "<div class='success'>Category updated Successfully</div>";

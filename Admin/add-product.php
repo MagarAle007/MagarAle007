@@ -1,8 +1,8 @@
-            <?php include('common/header.php')?>
+<?php include('common/header.php')?>
                         <!-- Body section starts -->
                         <section class="content">
                                         <div class="wrapper">
-                                            <h1 class="heading">ADD CATEGORIES</h1>
+                                            <h1 class="heading">ADD PRODUCTS</h1>
                                             <br><br>
 
                                     <?php include('config/session.php')?>
@@ -11,7 +11,76 @@
                                             <table class="table">
                                                 <tr>
                                                     <td class="text-right">Title</td>
-                                                    <td><input type="text" placeholder="Enter your title..." name="title" id="  " class="form-control"></td>
+                                                    <td><input type="text" placeholder="Enter your title..." name="title" id=" " class="form-control"></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-right">Price</td>   
+                                                    <td><input type="number" placeholder="Enter your Price..." name="price" id="  " class="form-control"></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-right">Category</td>
+                                                   <td>
+                                                   <select name="category_id" id="category">
+                                                        <?php  
+                                                            //creating sql 
+                                                            $sql = "SELECT * FROM categories";
+
+                                                            //exxecute the query
+                                                            $execute = mysqli_query($conn,$sql);
+
+                                                            //if true
+                                                            if($execute == TRUE){
+                                                                $count = mysqli_num_rows($execute);
+
+                                                                if($count>0){
+                                                                       while($rows = mysqli_fetch_assoc($execute)){
+                                                                        $category_name = $rows['title'];
+                                                                        $category_id = $rows['id'];
+                                                                        ?>
+                                                                        <option value="<?php  echo "$category_id";?>"> category_name </option>
+                                                                        <?php
+
+
+
+                                                                       }
+                                                                }else{
+                                                                    echo "<option>Category</option>";
+                                                                }
+
+                                                            }else{
+                                                                    echo "<option>Category</option>";
+                                                            }
+                                                        ?>
+                                                    </select>
+                                                   </td>
+                                                    <option value=""></option>
+                                                    <?php  
+                                                        //creating sql 
+                                                        $sql = "SELECT * FROM categories";
+
+                                                        //exxecute the query
+                                                        $execute = mysqli_query($conn,$sql);
+
+                                                        //if true
+                                                        if($execute == TRUE){
+                                                            $count = mysqli_num_rows($execute);
+
+                                                            if($count>0){
+                                                                    echo "<option>Category</option>";
+                                                            }else{
+                                                                echo "<option>Category</option>";
+
+                                                            }
+                                                        }
+                                                    ?>
+                                                        
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-right">Description</td>
+                                                    <td><textarea  rows="5" placeholder="Enter Description..." name="description" id="  " class="form-control"></textarea></td>
                                                 </tr>
 
                                                 <tr>
@@ -54,6 +123,11 @@
                         // Getting the data from the web form in respective variable
                         $title = $_POST['title'];
 
+                        $price = $_POST['price'];
+
+                        $description = $_POST['description'];
+                        $category_id = $_POST['category_id'];
+
                         // to populate the default value of featured
                         if(isset($_POST['featured'])){
                             // request value
@@ -84,12 +158,12 @@
                             $text = end(explode('.',$_FILES['image']['name']));
 
                              //giving the random name 
-                            $image = 'Category_'.rand(1111,9999).'.'.$text;
+                            $image = 'product_'.rand(1111,9999).'.'.$text;
                            
 
                             // image upload
                             $uploaded_path = $_FILES['image']['tmp_name'];
-                            $destination_path = "../images/category/".$image;
+                            $destination_path = "../images/product/".$image;
                             
                             $upload = move_uploaded_file($uploaded_path,$destination_path);
 
@@ -105,8 +179,11 @@
                         }
 
                         //making sql
-                        $sql = "INSERT INTO categories SET
+                        $sql = "INSERT INTO products SET
                             title = '$title',
+                            price = '$price',
+                            category_id = '$category_id',
+                            description =  $description,
                             image_name = '$image_name',
                             featured  = '$featured',
                             status = '$status'
@@ -118,11 +195,11 @@
                             $execute  = mysqli_query($conn,$sql) or die(mysqli_error($conn));    
                             //Create DAtabase
                             if($execute = TRUE){
-                                $_SESSION['message'] = "Category added succcessfully";
-                                header('location:'.APP_URL.'Admin/manage-category.php');
+                                $_SESSION['message'] = "Product added succcessfully";
+                                header('location:'.APP_URL.'Admin/manage-product.php');
                             }else{
-                                $_SESSION['message'] = "Could not add category Instantly .Try again";
-                                header('location:'.APP_URL.'Admin/add-category.php');
+                                $_SESSION['message'] = "Could not add product Instantly .Try again";
+                                header('location:'.APP_URL.'Admin/add-product.php');
                             }
 
                         }else{
@@ -131,4 +208,4 @@
 
                     }
                 }
-                ?>
+                ?>  
