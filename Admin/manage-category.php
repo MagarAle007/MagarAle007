@@ -55,6 +55,7 @@
                                                                         }else{
                                                                             echo '<td>No image found</td>';
                                                                         }
+                                                                        
                                                                     ?>
                                                                    
                                                                     <td><?php echo $featured;?></td>

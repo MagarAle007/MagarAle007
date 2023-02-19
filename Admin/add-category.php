@@ -11,7 +11,7 @@
                                             <table class="table">
                                                 <tr>
                                                     <td class="text-right">Title</td>
-                                                    <td><input type="text" placeholder="Enter your title..." name="title" id="  " class="form-control"></td>
+                                                    <td><input type="text" placeholder="Enter your title..." name="title" id="user_name" class="form-control"></td>
                                                 </tr>
 
                                                 <tr>

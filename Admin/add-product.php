@@ -2,7 +2,7 @@
                         <!-- Body section starts -->
                         <section class="content">
                                         <div class="wrapper">
-                                            <h1 class="heading">ADD PRODUCTS</h1>
+                                            <h1 class="heading">ADD PRODUCT</h1>
                                             <br><br>
 
                                     <?php include('config/session.php')?>
@@ -11,76 +11,55 @@
                                             <table class="table">
                                                 <tr>
                                                     <td class="text-right">Title</td>
-                                                    <td><input type="text" placeholder="Enter your title..." name="title" id=" " class="form-control"></td>
+                                                    <td><input type="text" placeholder="Enter your title..." name="title" id="user_name" class="form-control"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-right">price</td>
+                                                    <td><input type="number" placeholder="Enter your Price..." name="price" id="price" class="form-control"></td>
                                                 </tr>
 
                                                 <tr>
-                                                    <td class="text-right">Price</td>   
-                                                    <td><input type="number" placeholder="Enter your Price..." name="price" id="  " class="form-control"></td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="text-right">Product</td>
-                                                   <td>
-                                                   <select name="product_id" id="product">
-                                                        <?php  
-                                                            //creating sql 
-                                                            $sql = "SELECT * FROM categories";
-
-                                                            //exxecute the query
-                                                            $execute = mysqli_query($conn,$sql);
-
-                                                            //if true
-                                                            if($execute == TRUE){
-                                                                $count = mysqli_num_rows($execute);
-
-                                                                if($count>0){
-                                                                       while($rows = mysqli_fetch_assoc($execute)){
-                                                                        $product_name = $rows['title'];
-                                                                        $product_id = $rows['id'];
-                                                                        ?>
-                                                                        <option value="<?php  echo "$product_id";?>"> product_name </option>
-                                                                        <?php
-
-
-
-                                                                       }
-                                                                }else{
-                                                                    echo "<option>Product</option>";
-                                                                }
-
-                                                            }else{
-                                                                    echo "<option>Product</option>";
-                                                            }
-                                                        ?>
-                                                    </select>
-                                                   </td>
-                                                    <option value=""></option>
+                                                    <td class="text-right">Category</td>
+                                                   
+                                                    <select name="category_id" id="category">   
                                                     <?php  
-                                                        //creating sql 
-                                                        $sql = "SELECT * FROM products";
+                                                        //creating the sql
+                                                        $sql = "SELECT * FROM categories";  
 
-                                                        //exxecute the query
-                                                        $execute = mysqli_query($conn,$sql);
+                                                        //execute the query
+                                                        $execute =  mysqli_query($conn,sql);
 
                                                         //if true
                                                         if($execute == TRUE){
-                                                            $count = mysqli_num_rows($execute);
+                                                            //count the number 
+                                                            $count =   mysqli_num_rows($execute);
 
                                                             if($count>0){
-                                                                    echo "<option>Product</option>";
+                                                                    while($rows = mysqli_fetch_assoc($execute)){
+                                                                        $category_name = $rows['title'];
+                                                                        $category_id = $rows['id'];
+                                                                        ?>
+                                                                        <?php
+                                                                            <option value ='<?php echo $category_id; ?> '> <?php echo $category_name; ?> 
+                                                                            </option> 
+                                                                            
+                                                                        <option value = "<?php echo?>"></option>
+                                                                        ?>
+                                                                    }
                                                             }else{
-                                                                echo "<option>Product</option>";
-
+                                                                echo "<option>No Category</option>";
                                                             }
+                                                        }else{
+                                                            echo "<option>No Category</option>";
                                                         }
-                                                    ?>
-                                                        
+                                                    ?>  
+                                                    </select>
+                                                    <td><input type="number" placeholder="Enter your Price..." name="price" id="price" class="form-control"></td>
                                                 </tr>
 
                                                 <tr>
                                                     <td class="text-right">Description</td>
-                                                    <td><textarea  rows="5" placeholder="Enter Description..." name="description" id="  " class="form-control"></textarea></td>
+                                                    <td><textarea  rows="5" placeholder="Enter Description..." name="description" id="price" class="form-control"></textarea></td>
                                                 </tr>
 
                                                 <tr>
@@ -122,11 +101,10 @@
                         
                         // Getting the data from the web form in respective variable
                         $title = $_POST['title'];
-
                         $price = $_POST['price'];
-
                         $description = $_POST['description'];
-                        $product_id = $_POST['product_id'];
+
+
 
                         // to populate the default value of featured
                         if(isset($_POST['featured'])){
@@ -179,11 +157,10 @@
                         }
 
                         //making sql
-                        $sql = "INSERT INTO product SET
+                        $sql = "INSERT INTO products SET
                             title = '$title',
                             price = '$price',
-                            category_id = '$product_id',
-                            description =  $description,
+                            description = '$description',
                             image_name = '$image_name',
                             featured  = '$featured',
                             status = '$status'
@@ -196,10 +173,10 @@
                             //Create DAtabase
                             if($execute = TRUE){
                                 $_SESSION['message'] = "Product added succcessfully";
-                                header('location:'.APP_URL.'Admin/manage-product.php');
+                                header('location:'.APP_URL.'Admin/manage-product    .php');
                             }else{
-                                $_SESSION['message'] = "Could not add product Instantly .Try again";
-                                header('location:'.APP_URL.'Admin/add-product.php');
+                                $_SESSION['message'] = "Could not add category Instantly .Try again";
+                                header('location:'.APP_URL.'Admin/add-category.php');
                             }
 
                         }else{
@@ -208,4 +185,4 @@
 
                     }
                 }
-                ?>  
+                ?>

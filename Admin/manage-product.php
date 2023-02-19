@@ -7,13 +7,13 @@
 
                                     <?php include('config/session.php')?>
 
-                                    <a class="btn btn-secondary user-add"  href="add-PRODUCT.php">Add Product</a>
+                                    <a class="btn btn-secondary user-add"  href="add-product.php">Add Product</a>
                                     <br>
                                     <!-- Users table -->
                                         <table class="table">
                                             <thead>
                                             <tr>
-                                            <th>S.N</th>
+                                                 <th>S.N</th>
                                                 <th>Title</th>
                                                 <th>Image</th>
                                                 <th>Featured</th>
@@ -39,6 +39,7 @@
                                                             while($rows = mysqli_fetch_assoc($exec)){
                                                                 $id = $rows['id'];
                                                                 $title = $rows['title'];
+                                                                $price = $rows['price'];
                                                                 $current_image = $rows['image_name'];
                                                                 $featured = $rows['featured'];    
                                                                 $status = $rows['status'];
@@ -47,6 +48,7 @@
                                                                 <tr>
                                                                     <td><?php echo $sn++;?></td>
                                                                     <td><?php echo $title;?></td>
+                                                                    <td><?php echo $price;?></td>
                                                                     <?php
                                                                         if($current_image != ""){
                                                                      ?>
@@ -74,7 +76,7 @@
                                                             }
                                                         }
                                                     }else{
-                                                        echo '<tr><td clospan="6" class="text-center">No rows to display</td></tr>';
+                                                        echo '<tr><td clospan="7" class="text-center">No rows to display</td></tr>';
                                                     }
                                             ?>
                                             
