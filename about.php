@@ -1,35 +1,6 @@
-
-
-<!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="css/style.css">
-            <title>Real_state</title>
-        </head>
-        <body>
-            <!-- Navbar Section Begins Here -->
-            <section class="navbar">
-                <div class="container">
-                    <div class="logo">
-                        <img src="images/logo.png" alt="Real_state logo" class="img-responsive">
-                    </div>
-                    <div class="menu text-right">
-                        <ul>
-                                <li><a href="home.html">Home</a></li>
-                                <li><a href="categories.html">Categories</a></li>
-                                <li><a href="land.html">land</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            
-            </section>
-            <!-- Navbar Section Begins Here -->
-
+<?php 
+    include('layout/header.php');
+?>
             <!--search Section Begins Here -->
             <section class="search text-center">
                 <div class="container">
@@ -203,14 +174,9 @@
             </section>
             <!-- social Section Begins Here -->
 
-            <!-- footer Section Begins Here -->
-            <section class="footer text-center">
-                <div class="container">
-                        <p>Copyright 2022. All Rights Reserved. Desigened By
-                            <a href="https://github.com/MagarAle007/MagarAle007.git">Sanjeev Ale Magar aka S.A.M</a>
-                        </p>
-                </div>
-                </section>
-            <!-- footer Section Begins Here -->
+            <?php
+        include('layout/footer.php');
+
+    ?>
         </body>
         </html>

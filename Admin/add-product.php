@@ -20,9 +20,9 @@
                                                 </tr>
 
                                                 <tr>
-                                                    <td class="text-right">Category</td>
+                                                    <td class="text-right">Product</td>
                                                    <td>
-                                                   <select name="category_id" id="category">
+                                                   <select name="product_id" id="product">
                                                         <?php  
                                                             //creating sql 
                                                             $sql = "SELECT * FROM categories";
@@ -36,21 +36,21 @@
 
                                                                 if($count>0){
                                                                        while($rows = mysqli_fetch_assoc($execute)){
-                                                                        $category_name = $rows['title'];
-                                                                        $category_id = $rows['id'];
+                                                                        $product_name = $rows['title'];
+                                                                        $product_id = $rows['id'];
                                                                         ?>
-                                                                        <option value="<?php  echo "$category_id";?>"> category_name </option>
+                                                                        <option value="<?php  echo "$product_id";?>"> product_name </option>
                                                                         <?php
 
 
 
                                                                        }
                                                                 }else{
-                                                                    echo "<option>Category</option>";
+                                                                    echo "<option>Product</option>";
                                                                 }
 
                                                             }else{
-                                                                    echo "<option>Category</option>";
+                                                                    echo "<option>Product</option>";
                                                             }
                                                         ?>
                                                     </select>
@@ -58,7 +58,7 @@
                                                     <option value=""></option>
                                                     <?php  
                                                         //creating sql 
-                                                        $sql = "SELECT * FROM categories";
+                                                        $sql = "SELECT * FROM products";
 
                                                         //exxecute the query
                                                         $execute = mysqli_query($conn,$sql);
@@ -68,9 +68,9 @@
                                                             $count = mysqli_num_rows($execute);
 
                                                             if($count>0){
-                                                                    echo "<option>Category</option>";
+                                                                    echo "<option>Product</option>";
                                                             }else{
-                                                                echo "<option>Category</option>";
+                                                                echo "<option>Product</option>";
 
                                                             }
                                                         }
@@ -126,7 +126,7 @@
                         $price = $_POST['price'];
 
                         $description = $_POST['description'];
-                        $category_id = $_POST['category_id'];
+                        $product_id = $_POST['product_id'];
 
                         // to populate the default value of featured
                         if(isset($_POST['featured'])){
@@ -179,10 +179,10 @@
                         }
 
                         //making sql
-                        $sql = "INSERT INTO products SET
+                        $sql = "INSERT INTO product SET
                             title = '$title',
                             price = '$price',
-                            category_id = '$category_id',
+                            category_id = '$product_id',
                             description =  $description,
                             image_name = '$image_name',
                             featured  = '$featured',

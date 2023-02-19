@@ -7,7 +7,7 @@
 
                                     <?php include('config/session.php')?>
 
-                                    <a class="btn btn-secondary user-add"  href="add-product.php">Add Product</a>
+                                    <a class="btn btn-secondary user-add"  href="add-PRODUCT.php">Add Product</a>
                                     <br>
                                     <!-- Users table -->
                                         <table class="table">
@@ -16,7 +16,6 @@
                                             <th>S.N</th>
                                                 <th>Title</th>
                                                 <th>Image</th>
-                                                <th>Price</th>`
                                                 <th>Featured</th>
                                                 <th>Status</th>
                                                 <th>Active</th>
@@ -40,7 +39,6 @@
                                                             while($rows = mysqli_fetch_assoc($exec)){
                                                                 $id = $rows['id'];
                                                                 $title = $rows['title'];
-                                                                $price = $rows['price'];
                                                                 $current_image = $rows['image_name'];
                                                                 $featured = $rows['featured'];    
                                                                 $status = $rows['status'];
@@ -49,8 +47,6 @@
                                                                 <tr>
                                                                     <td><?php echo $sn++;?></td>
                                                                     <td><?php echo $title;?></td>
-                                                                    <td><?php echo $price;?></td>
-
                                                                     <?php
                                                                         if($current_image != ""){
                                                                      ?>
@@ -59,6 +55,7 @@
                                                                         }else{
                                                                             echo '<td>No image found</td>';
                                                                         }
+                                                                        
                                                                     ?>
                                                                    
                                                                     <td><?php echo $featured;?></td>
@@ -66,10 +63,10 @@
                                                                     
                                                                     <td>
                                                                             <a class="btn btn-primary" href="<?php   echo APP_URL;?>Admin/edit-product.php?id=<?php echo $id; ?>">
-                                                                            Edit Product
+                                                                            Edit product
                                                                             </a>
                                                                         <a class="btn btn-danger"  href="<?php   echo APP_URL;?>Admin/delete-product.php?id=<?php echo $id; ?>">
-                                                                        delete Product
+                                                                        delete product
                                                                         </a>
                                                                     </td>
                                                                 </tr>
@@ -77,7 +74,7 @@
                                                             }
                                                         }
                                                     }else{
-                                                        echo '<tr><td clospan="7" class="text-center">No rows to display</td></tr>';
+                                                        echo '<tr><td clospan="6" class="text-center">No rows to display</td></tr>';
                                                     }
                                             ?>
                                             
