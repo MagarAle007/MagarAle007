@@ -24,7 +24,7 @@
                                                         $title = $rows['title'];
                                                         $price = $rows['price'];
                                                         $description = $rows['description'];
-                                                        $old_category_id = $rows['category_id'];
+                                                        $old_product_id = $rows['product_id'];
                                                         $current_image = $rows['image_name'];
                                                         $featured = $rows['featured'];
                                                         $status = $rows['status'];
@@ -45,12 +45,12 @@
                                                 </tr>
 
                                                 <tr>
-                                                    <td class="text-right">Category</td>
+                                                    <td class="text-right">Product</td>
                                                    <td>
-                                                   <select name="category_id" id="category">
+                                                   <select name="product_id" id="product">
                                                         <?php  
                                                             //creating sql 
-                                                            $sql = "SELECT * FROM categories";
+                                                            $sql = "SELECT * FROM products";
 
                                                             //exxecute the query
                                                             $execute = mysqli_query($conn,$sql);
@@ -61,18 +61,18 @@
 
                                                                 if($count>0){
                                                                        while($rows = mysqli_fetch_assoc($execute)){
-                                                                        $category_name = $rows['title'];
-                                                                        $category_id = $rows['id'];
+                                                                        $product_name = $rows['title'];
+                                                                        $product_id = $rows['id'];
                                                                         ?>
-                                                                        <option  <?php if($old_category_id == $category_id){ echo "selected";}?> value=" <?php  echo "$category_id";?>"> category_name </option>
+                                                                        <option  <?php if($old_product_id == $product_id){ echo "selected";}?> value=" <?php  echo "$product_id";?>"> product_name </option>
                                                                         <?php
                                                                        }
                                                                 }else{
-                                                                    echo "<option>Category</option>";
+                                                                    echo "<option>Product</option>";
                                                                 }
 
                                                             }else{
-                                                                    echo "<option>Category</option>";
+                                                                    echo "<option>product</option>";
                                                             }
                                                         ?>
                                                     </select>
@@ -80,7 +80,7 @@
                                                     <option value=""></option>
                                                     <?php  
                                                         //creating sql 
-                                                        $sql = "SELECT * FROM categories";
+                                                        $sql = "SELECT * FROM products";
 
                                                         //exxecute the query
                                                         $execute = mysqli_query($conn,$sql);
@@ -90,9 +90,9 @@
                                                             $count = mysqli_num_rows($execute);
 
                                                             if($count>0){
-                                                                    echo "<option>Category</option>";
+                                                                    echo "<option>product</option>";
                                                             }else{
-                                                                echo "<option>Category</option>";
+                                                                echo "<option>product</option>";
 
                                                             }
                                                         }
@@ -110,7 +110,7 @@
                                                             <?php
                                                                   if($current_image != ""){
                                                               ?>
-                                                                   <td>  <img  width="100" height="100" src="../images/category/<?php echo $current_image;?>" alt="<?php echo $title;?>"></td>
+                                                                   <td>  <img  width="100" height="100" src="../images/product/<?php echo $current_image;?>" alt="<?php echo $title;?>"></td>
                                                               <?php
                                                               }else{
                                                                     echo '<td>No image found</td>';
@@ -193,10 +193,10 @@
                                         $text = end(explode('.',$file));
 
                                                 //giving the random name 
-                                          $image = 'Category_'.rand(1111,9999).'.'.$text;
+                                          $image = 'product_'.rand(1111,9999).'.'.$text;
                                         // image upload
                                         $uploaded_path = $_FILES['image']['tmp_name'];
-                                        $destination_path = "../images/category/".$image;
+                                        $destination_path = "../images/product/".$image;
                                         
                                         $upload = move_uploaded_file($uploaded_path,$destination_path);
 
@@ -207,15 +207,15 @@
                                             $image_name = $image;
                                             
                                             //remove the old image
-                                            if(file_exists("../images/category/".$current_image)){
-                                                @unlink("../images/category/".$current_image);
+                                            if(file_exists("../images/product/".$current_image)){
+                                                @unlink("../images/product/".$current_image);
                                         }
 
                                     }}else{
                                         $image_name = $current_image;
                                     }
                                     //making sql 
-                                $sql = "UPDATE categories SET 
+                                $sql = "UPDATE products SET 
                                 title='$title',
                                 featured='$featured',
                                 status = '$status',
@@ -227,11 +227,11 @@
                                 $execute = mysqli_query($conn, $sql) or die(mysqli_error($conn));
                                     //create database
                                         if($execute == TRUE){
-                                            $_SESSION['message'] = "<div class='success'>Category updated Successfully</div>";
-                                            header('location:'.APP_URL.'Admin/manage-category.php');
+                                            $_SESSION['message'] = "<div class='success'>product updated Successfully</div>";
+                                            header('location:'.APP_URL.'Admin/manage-product.php');
                                         }else{
-                                            $_SESSION['message'] = '<div class="error">Could not Edit Category Instantly. Try Again</div>';
-                                            header("location:".APP_URL."Admin/edit-category.php");
+                                            $_SESSION['message'] = '<div class="error">Could not Edit product Instantly. Try Again</div>';
+                                            header("location:".APP_URL."Admin/edit-product.php");
                                         }
                                         
                                 }else{
