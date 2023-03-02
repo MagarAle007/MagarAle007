@@ -22,7 +22,7 @@
             if($count == 1){
                 while($rows=mysqli_fetch_assoc($exec)){
                     $id = $rows['id'];
-                    $title = $rows['product'];
+                    $title = $rows['product_id'];
                     $price = $rows['price'];
                     $quantity = $rows['quantity'];
                     $total = $rows['total'];
@@ -120,10 +120,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             //create database 
             if($execute == TRUE){
                 $_SESSION['message']= '<div class="success"> Order updated Succefully </div>';
-                header('location:'.APP_URL.'admin/manage-order.php');
+                header('location:'.APP_URL.'Admin/manage-order.php');
             }else{
                 $_SESSION['message'] = '<div class="error"> Could not Edit Order Instantly. Try Again </div>';
-                header('location:'.APP_URL.'admin/edit-order.php?id='.$id);
+                header('location:'.APP_URL.'Admin/edit-order.php ?id='.$id);
             }
         }else{
             die("Connection Failed".mysqli_connect_error());

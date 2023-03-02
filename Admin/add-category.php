@@ -81,9 +81,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         //Check if request file
         if($_FILES['image']['name']){ 
             //taking the extension
-            $ext = end(explode('.',$_FILES['image']['name']));
+            // $ext = end(explode('.',$_FILES['image']['name']));
+            $tmp = explode('.', $_FILES['image']['name']);
+            $file_extension = end($tmp);    
             //giving the random name
-            $image = 'Category_'.rand(1111,9999).'.'.$ext;
+            $image = 'Category_'.rand(1111,9999).'.'.$tmp;
          //upload the image
          $uploaded_path = $_FILES['image']['tmp_name'];
          $destination_path = "../images/category/".$image;

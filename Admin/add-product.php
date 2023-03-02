@@ -163,10 +163,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             //create database 
             if($execute = TRUE){
                 $_SESSION['message']= '<div class="success"> Product Added Succefully </div>';
-                header('location:'.APP_URL.'admin/manage-product.php');
+                header('location:'.APP_URL.'Admin/manage-product.php');
             }else{
                 $_SESSION['message'] = '<div class="error"> Could not Add Product Instantly. Try Again </div>';
-                header('location:'.APP_URL.'admin/add-product.php');
+                header('location:'.APP_URL.'Admin/add-product.php');
             }
         }else{
             die("Connection Failed".mysqli_connect_error());

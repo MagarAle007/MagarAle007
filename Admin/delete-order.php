@@ -1,7 +1,7 @@
 <?php
 
 //getting the connection
-include('config/constants.php');
+include('config/constant.php');
 //taking the id
 $id = $_GET['id'];
 echo $id;
@@ -17,7 +17,7 @@ echo $id;
 
 //making the sql
 
-$sql = "DELETE FROM ORDERS WHERE ID = '$id'";
+$sql = "DELETE FROM orders WHERE ID = '$id'";
 
 //execute query
 $exec = mysqli_query($conn,$sql);
@@ -28,5 +28,5 @@ if($exec == TRUE){
 }else{
     $_SESSION['message'] = '<div class="error"> Something Went Wrong. Try Again </div>';
 }
-header('location:'.APP_URL.'admin/manage-order.php');
+header('location:'.APP_URL.'Admin/manage-order.php');
 ?>
