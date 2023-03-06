@@ -3,7 +3,7 @@
     <!-- Body Section Starts -->
     <section class="content">
         <div class="wrapper">
-             <h1 class="heading">ADD Category</h1>
+             <h1 class="heading">ADD CATEGORY</h1>
             <br>
             <?php include('config/session.php') ?>
              <!-- Category Add Form -->
