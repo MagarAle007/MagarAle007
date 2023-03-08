@@ -7,14 +7,15 @@
 
                                     <?php include('config/session.php')?>
 
-                                    <a class="btn btn-secondary user-add"  href="add-product.php">Add Product</a>
+                                    <a class="btn btn-secondary user-add"  href="add-product.php">Add PRODUCT</a>
                                     <br>
                                     <!-- Users table -->
                                         <table class="table">
                                             <thead>
                                             <tr>
-                                                 <th>S.N</th>
+                                            <th>S.N</th>
                                                 <th>Title</th>
+                                                <th>price</th>
                                                 <th>Image</th>
                                                 <th>Featured</th>
                                                 <th>Status</th>
@@ -23,7 +24,7 @@
                                             </thead>
                                             <tbody>
                                             <?php
-                                                    // making the sql  to fetch the data from products table
+                                                    // making the sql  to fetch the data from categories table
                                                     $sql = "SELECT * FROM products";
 
                                                     // execute the query
@@ -38,7 +39,7 @@
                                                             $sn = 1;
                                                             while($rows = mysqli_fetch_assoc($exec)){
                                                                 $id = $rows['id'];
-                                                                $title = $rows['title'];
+                                                                $title = $rows['title'];]
                                                                 $price = $rows['price'];
                                                                 $current_image = $rows['image_name'];
                                                                 $featured = $rows['featured'];    
@@ -65,10 +66,10 @@
                                                                     
                                                                     <td>
                                                                             <a class="btn btn-primary" href="<?php   echo APP_URL;?>Admin/edit-product.php?id=<?php echo $id; ?>">
-                                                                            Edit product
+                                                                            Edit Product
                                                                             </a>
                                                                         <a class="btn btn-danger"  href="<?php   echo APP_URL;?>Admin/delete-product.php?id=<?php echo $id; ?>">
-                                                                        delete product
+                                                                        delete Product
                                                                         </a>
                                                                     </td>
                                                                 </tr>
@@ -76,7 +77,7 @@
                                                             }
                                                         }
                                                     }else{
-                                                        echo '<tr><td clospan="7" class="text-center">No rows to display</td></tr>';
+                                                        echo '<tr><td clospan="6" class="text-center">No rows to display</td></tr>';
                                                     }
                                             ?>
                                             
