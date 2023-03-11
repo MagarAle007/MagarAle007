@@ -17,7 +17,7 @@ echo $id;
 
 //making the sql
 
-$sql = "DELETE FROM orders WHERE ID = '$id'";
+$sql = "DELETE FROM ORDERS WHERE ID = '$id'";
 
 //execute query
 $exec = mysqli_query($conn,$sql);

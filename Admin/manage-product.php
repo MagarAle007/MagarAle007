@@ -39,7 +39,7 @@
                                                             $sn = 1;
                                                             while($rows = mysqli_fetch_assoc($exec)){
                                                                 $id = $rows['id'];
-                                                                $title = $rows['title'];]
+                                                                $title = $rows['title'];
                                                                 $price = $rows['price'];
                                                                 $current_image = $rows['image_name'];
                                                                 $featured = $rows['featured'];    

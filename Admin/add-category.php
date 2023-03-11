@@ -115,10 +115,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             //create database 
             if($execute = TRUE){
                 $_SESSION['message']= '<div class="success"> Category Added Succefully </div>';
-                header('location:'.APP_URL.'admin/manage-category.php');
+                header('location:'.APP_URL.'Admin/manage-category.php');
             }else{
                 $_SESSION['message'] = '<div class="error"> Could not Add Category Instantly. Try Again </div>';
-                header('location:'.APP_URL.'admin/add-category.php');
+                header('location:'.APP_URL.'Admin/add-category.php');
             }
         }else{
             die("Connection Failed".mysqli_connect_error());

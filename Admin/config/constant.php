@@ -1,7 +1,7 @@
 <?php 
 ob_start();
     //Define frequent constant 
-    define('APP_URL', 'http://localhost/PROJECT/');
+    define('APP_URL', 'http://localhost/project1/');
     
     define('LOCALHOST', 'localhost');
     define('DB_USERNAME', 'root');
